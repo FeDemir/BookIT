@@ -1,9 +1,11 @@
 package com.BookIT.step_definitions;
 
 import com.BookIT.pages.BookITLoginPage;
+import com.BookIT.pages.DashboardPage;
 import com.BookIT.utilities.ConfigurationReader;
 import com.BookIT.utilities.Driver;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
@@ -27,10 +29,14 @@ public class BookITLogin_StepDefinitions {
     @When("User clicks on sign in button")
     public void user_clicks_on_sign_in_button() {
         // Write code here that turns the phrase above into concrete actions
-        String previousTitle = Driver.getDriver().getTitle();
+
         loginPage.signinBtn.click();
-        String titleAfterLogin = Driver.getDriver().getTitle();
-        Assert.assertFalse(previousTitle.equals(titleAfterLogin));
+
     }
 
+    @Then("user mainmap is visible")
+    public void userMainmapIsVisible() {
+        DashboardPage dashboardPage = new DashboardPage();
+        Assert.assertTrue(dashboardPage.mapView.isDisplayed());
+    }
 }
