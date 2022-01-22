@@ -1,11 +1,10 @@
 package com.BookIT.pages;
 
-import jdk.nashorn.internal.ir.IfNode;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BookITLoginPage extends BasePage {
+public class LoginPage extends BasePage {
 
 
     @FindBy (name = "email")
