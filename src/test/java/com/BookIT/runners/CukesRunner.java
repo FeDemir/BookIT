@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/BookIT/step_definitions",
-        dryRun = false
-        //tags = "@Library"
+        dryRun = true
+        ,tags = "@db"
 )
 public class CukesRunner {
 }

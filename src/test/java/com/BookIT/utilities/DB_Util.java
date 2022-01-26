@@ -39,9 +39,9 @@ public class DB_Util {
      */
     public static void createConnection(){
 
-        String url      = "jdbc:oracle:thin:@44.202.36.14:1521:XE"; ;
-        String username = "hr" ;
-        String password = "hr" ;
+        String url      = "jdbc:postgresql://room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com/room_reservation_qa? :5432/postgres";
+        String username = "qa_user" ;
+        String password = "Cybertek11!" ;
 
         createConnection(url, username, password);
 

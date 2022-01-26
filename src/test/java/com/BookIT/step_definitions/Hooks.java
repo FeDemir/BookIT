@@ -1,5 +1,6 @@
 package com.BookIT.step_definitions;
 
+import com.BookIT.utilities.DB_Util;
 import com.BookIT.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -29,5 +30,17 @@ public class Hooks {
             scenario.attach(shot, "image/png", scenario.getName());
         }
         Driver.closeDriver();
+    }
+
+    @Before("@db")
+    public void setUpDB(){
+        DB_Util.createConnection();
+        System.out.println("CONNECTING DATABASE");
+    }
+
+    @After("@db")
+    public void destroyDB(){
+        DB_Util.destroy();
+        System.out.println("CLOSING DATABASE");
     }
 }
