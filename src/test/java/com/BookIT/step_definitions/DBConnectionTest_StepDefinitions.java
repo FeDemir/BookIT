@@ -12,8 +12,8 @@ public class DBConnectionTest_StepDefinitions {
     public void user_on_no_page() {
         
     }
-    @Then("user prints column headers for books")
-    public void user_prints_column_headers_for_books() {
+    @Then("user prints column headers for users")
+    public void user_prints_column_headers_for_users() {
         DB_Util.runQuery("select * from users");
         System.out.println("Column Count = "+DB_Util.getColumnCount());
         List<String> columns = DB_Util.getAllColumnNamesAsList();
